@@ -1,56 +1,39 @@
+import Swiper from "swiper";
+import { Navigation, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import "/src/sass/style.scss";
 
-console.log("Hello world");
+try {
+  // const swiper = new Swiper(".works__slider", { это с переменной
+  new Swiper(".works__slider", {
+    slidesPerView: 1,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      // when window width is >= 1200px
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 5,
+      },
+      1920: {
+        spaceBetween: 35,
+      },
+    },
 
-let text = "Hello world";
-const pi = 3.14;
-const isOpen = false; //false or true
-// let a:
+    modules: [Navigation, Pagination],
+  });
+} catch (e) {}
 
-text = "This is text";
-
-console.log(text);
-// console.log(a);
-
-const person = {
-  name: "Ivan",
-  age: 32,
-};
-
-console.log(person.name);
-
-const titles = [
-  "Make your dream come true or decorate your home",
-  "create or buy",
-  "our store", //массив
-];
-
-// console.log(titles[0]);
-
-function calc(a, b) {
-  //функция
-  console.log(a + b);
-}
-
-calc(5, 5);
-calc(10, 12);
-
-// что будет выполняться если условие правдивое
-if (isOpen) {
-  console.log("shop is open");
-}
-
-// что будет выполняться в обратном случае мы будем делать что-то другое
-else {
-  console.log("shop is closed");
-}
-
-const vase = document.querySelector(".touch__decor");
-// console.log(vase);
-
-vase.addEventListener("click", () => {
-  console.log(vase);
-});
-
-// addEventListener; обработчик события
-// querySelector; чтение селектора как я правильно понял
+// try {
+// } catch (e) {} это конструкция позволяет запустить java scriptcode и если что-то сломается ничего страшного
