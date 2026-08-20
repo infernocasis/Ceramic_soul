@@ -28,6 +28,7 @@ try {
       },
       1920: {
         spaceBetween: 35,
+        slidesPerView: 3, // в зависимости от версии swiper надо добавлять slidesPerView
       },
     },
 
